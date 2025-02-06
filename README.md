@@ -1,9 +1,9 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=0:8A2BE2,100:00BFFF&height=220&section=header&text=🎶Trot_Master&fontSize=55&fontColor=E0FFFF&fontAlignY=40&desc=Feel%20the%20Music,%20Join%20the%20Fandom!&descSize=20&descAlignY=60)
 
 
-## 📑 0. 목차
+## 📑 목차
 
-0. [ 👨‍💻 개발 스토리](/Develop_README.md)
+0. [ 👨‍💻 개발 스토리]()    [바로가기](/Develop_README.md)
 1. [🌟 트로트 팬 플랫폼 서비스 개요](#-1-트로트-팬-플랫폼-trot_master-서비스-개요)
 2. [📊 시장 분석](#-2-시장-분석)
    - 데이터 인사이트
@@ -18,6 +18,15 @@
 9. [💥 최종 결론](#-최종-결론)
 10. [🎨 UI/UX 디자인](#-9-uiux-디자인-서비스-화면-예시)
 
+
+## 👨‍💻  0. 개발 스토리
+
+<div align="center">
+  
+[![개발문서 바로가기](https://img.shields.io/badge/📚_개발문서_바로가기-FF6B6B?style=for-the-badge)](Develop_README.md)
+[![기술 스택 보기](https://img.shields.io/badge/🛠_기술_스택_보기-4CAF50?style=for-the-badge)](Develop_README.md#-기술-스택)
+
+</div>
 
 ## 🌟 1. 트로트 팬 플랫폼 [Trot_Master] 서비스 개요
 
