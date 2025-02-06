@@ -199,6 +199,4 @@
 📌 **UI 디자인 미리보기**  
 ![UI 디자인 샘플](UI.png)
 
-<br><br>
-
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:8A2BE2&height=180&section=footer)
