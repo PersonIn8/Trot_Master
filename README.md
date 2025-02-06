@@ -21,7 +21,7 @@
 
 ## 👨‍💻  0. 개발 스토리
 
-<div align="center">
+<div>
   
 [![개발문서 바로가기](https://img.shields.io/badge/📚_개발문서_바로가기-FF6B6B?style=for-the-badge)](Develop_README.md)
 [![기술 스택 보기](https://img.shields.io/badge/🛠_기술_스택_보기-4CAF50?style=for-the-badge)](Develop_README.md#-기술-스택)
