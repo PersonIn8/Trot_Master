@@ -1,38 +1,22 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(90deg,%238A2BE2,%2300BFFF)&height=220&section=header&text=Trot_Master&fontSize=55&fontColor=FFFFFF&fontAlignY=40&desc=Feel%20the%20Music,%20Join%20the%20Fandom!&descSize=20&descAlignY=60)
+![header](https://capsule-render.vercel.app/api?type=waving&color=0:8A2BE2,100:00BFFF&height=220&section=header&text=🎶Trot_Master&fontSize=55&fontColor=E0FFFF&fontAlignY=40&desc=Feel%20the%20Music,%20Join%20the%20Fandom!&descSize=20&descAlignY=60)
 
-<!-- 본문 내용 -->
-
-![footer](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(90deg,%2300BFFF,%238A2BE2)&height=180&section=footer)
-
-![header](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(45deg,%23FFD700,%238B4513)&height=220&section=header&text=Trot_Master&fontSize=55&fontColor=FFFFFF&fontAlignY=40&desc=The%20Ultimate%20Trot%20Fan%20Platform&descSize=20&descAlignY=60)
-
-<!-- 본문 내용 -->
-
-![footer](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(45deg,%238B4513,%23FFD700)&height=180&section=footer)
-![header](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(90deg,%238A2BE2,%2300BFFF)&height=220&section=header&text=Trot_Master&fontSize=55&fontColor=FFFFFF&fontAlignY=40&desc=Feel%20the%20Music,%20Join%20the%20Fandom!&descSize=20&descAlignY=60)
-
-<!-- 본문 내용 -->
-
-![footer](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(90deg,%2300BFFF,%238A2BE2)&height=180&section=footer)
-![header](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(135deg,%23000000,%23C0C0C0)&height=220&section=header&text=Trot_Master&fontSize=55&fontColor=FFD700&fontAlignY=40&desc=Exclusive%20Trot%20Fandom%20Community&descSize=20&descAlignY=60)
-
-<!-- 본문 내용 -->
-
-![footer](https://capsule-render.vercel.app/api?type=waving&color=linear-gradient(135deg,%23C0C0C0,%23000000)&height=180&section=footer)
-
-# 🎶 트로트 팬 플랫폼 [Trot_Master]
-
-## 🌟 1. Trot_Master 서비스 개요
+## 🌟 1. 트로트 팬 플랫폼 [Trot_Master] 서비스 개요
 
 **🎯 목적**  
 50~60대 트로트 팬을 위한 팬덤 커뮤니티 & 굿즈 거래 플랫폼 구축  
 쉽고 직관적인 UI 제공으로 시니어층의 접근성을 높임  
+<br>
 
 **🔥 핵심 기능**  
 🎤 **팬 커뮤니티** → 가수별 팬클럽 운영, 팬 활동 랭킹  
 🛍️ **트로트 굿즈 마켓** → 비공식 굿즈 제작 중개 & 공식 굿즈 판매  
 💖 **활동 포인트 & 서포트** → 커피차, 밥차 후원 프로젝트  
-🎫 **공연 & 이벤트** → 예매 사이트 연계 & 일정 알림 기능  
+🎫 **공연 & 이벤트** → 예매 사이트 연계 & 일정 알림 기능
+
+
+**🛰️ 서비스 흐름도**
+![alt text](Service.png)
+
 
 ---
 
@@ -45,7 +29,7 @@
 ### 🔍 경쟁사 분석 & 차별화 전략  
 
 | 플랫폼 | 주요 기능 | 차별화 가능성 |
-|---|---|---|
+|-----|---|---|
 | 🎥 유튜브 | 트로트 콘텐츠 多 | 팬 커뮤니티 기능 없음 |
 | 🎵 멜론/벅스 | 트로트 스트리밍 지원 | 팬 참여 기능 부족 |
 | 🏘️ 네이버 밴드 | 시니어 모임 가능 | 트로트 특화 X |
@@ -53,8 +37,10 @@
 | 🛒 굿즈 판매몰 (예: 스마트스토어) | 트로트 관련 굿즈 판매 가능 | 팬덤 중심의 중개 시스템 없음 |
 | 🎟️ 콘서트 티켓 정보 제공 사이트 (예: 인터파크, 멜론 티켓) | 트로트 공연 예매 가능 | 팬덤 맞춤형 추천 기능 부족 |
 
+<br>
+
 💡 **차별화 요소**  
-- 🎯 **50~60대 맞춤 UI 제공** (큰 글씨 + 직관적인 인터페이스)  
+- 🎯 **50~60대 맞춤 UI 제공**  (큰 글씨 + 직관적인 인터페이스)  
 - 🎶 **트로트 팬덤 중심의 기능 최적화** (팬클럽 운영, 굿즈, 이벤트 관리)  
 - 🌍 **온라인 + 오프라인 연결** (콘서트, 이벤트, 팬미팅 연계)  
 
@@ -147,3 +133,27 @@
 ✅ **파일럿 서비스 개발 (초기 버전 MVP 제작 후 시장 반응 확인)**  
 
 ---
+
+
+## 🎨 9. UI/UX 디자인 (서비스 화면 예시)
+
+🔹 **홈 화면**  
+- 추천 트로트 콘텐츠 및 핫한 팬 커뮤니티 게시글 노출  
+
+🔹 **팬 커뮤니티**  
+- 가수별 팬클럽 페이지  
+- 게시판 & 팬 랭킹 시스템  
+
+🔹 **트로트 굿즈 마켓**  
+- 공식 굿즈 판매  
+- 팬들이 직접 거래하는 비공식 굿즈 중개  
+
+🔹 **공연 & 이벤트 페이지**  
+- 콘서트 일정 조회 및 예매 연동  
+- 팬미팅 이벤트 신청 기능  
+
+📌 **UI 디자인 미리보기**  
+![UI 디자인 샘플](링크_또는_파일경로)
+
+
+![footer](https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:8A2BE2&height=180&section=footer)
