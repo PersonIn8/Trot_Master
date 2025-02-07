@@ -71,8 +71,7 @@
 (디렉토리 구조 설명 추가)  
 
 ## 🏗 시스템 구조도  
-
-(시스템 구조 다이어그램 추가)  
+![alt text](System.png)
 
 ## 🛰️ 서비스 흐름도  
 ![alt text](Service.png)  
