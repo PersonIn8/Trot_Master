@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>가수 프로필</title>
+    <script>
+    function fetchSingerData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const singerId = urlParams.get('id');
+
+        fetch('SingerController?id=' + singerId)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.singer) {
+                    console.error("데이터를 가져오지 못했습니다:", data);
+                    return;
+                }
+
+                // ✅ 가수 정보 매핑
+                document.getElementById("profile-img").src = data.singer.imageUrl;
+                document.getElementById("profile-name").innerText = data.singer.name;
+                document.getElementById("profile-debut").innerText = "📅 데뷔일: " + data.singer.debutDate;
+                document.getElementById("profile-social").innerText = "📍 소셜 미디어: " + data.singer.socialMedia;
+                document.getElementById("profile-score").innerText = "⭐ 총 점수: " + data.singer.totalPoint;
+
+                // ✅ 추가정보 (totalPoint 내림차순 목록)
+                let topSingersList = document.getElementById("top-singers");
+                topSingersList.innerHTML = "";
+                data.topSingers.forEach(singer => {
+                    let li = document.createElement("li");
+                    li.textContent = singer;
+                    topSingersList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('데이터 가져오기 오류:', error));
+    }
+
+    window.onload = fetchSingerData;
+    </script>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            background-color: #c4c4c4;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .extra-box {
+            width: 320px;
+            height: 220px;
+            background-color: #c4c4c4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <img id="profile-img" src="" alt="가수 이미지" class="profile-image">
+            <div class="extra-box">
+                <h3>가수 랭킹</h3>
+                <ul id="top-singers"></ul>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="card">
+                <h2 id="profile-name">가수 이름</h2>
+                <p id="profile-debut"></p>
+                <p id="profile-social"></p>
+                <p id="profile-score"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

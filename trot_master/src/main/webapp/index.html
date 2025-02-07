@@ -91,6 +91,11 @@
                 `;
             }
         }
+        
+        function openSingerProfile(singerId) {
+            let popup = window.open("Singer.html?id=" + singerId, "SingerProfile", "width=800,height=600,scrollbars=yes");
+            if (popup) popup.focus();
+        }
 
         function handleLogout() {
             fetch('LogoutController', { method: 'POST' })
@@ -147,8 +152,7 @@
 					<div class="inner">
 						<h3>송가인</h3>
 						<p>'미스트롯' 우승자로 전통 트로트의 정수를 선보이며 국민적인 인기를 얻은 가수</p>
-						<a href="https://youtu.be/s6zR2T9vn2c" class="button fit"
-							data-poptrox="youtube,800x400">Watch</a>
+						<button class="button fit" onclick="openSingerProfile(1)">Watch</button>
 					</div>
 				</div>
 
