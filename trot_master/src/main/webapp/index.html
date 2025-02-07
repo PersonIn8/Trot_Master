@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Full Motion</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.mySlides {
+    display: none;
+}
+
+.w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+#banner {
+    position: relative;
+    z-index: 1;
+}
+</style>
+</head>
+<body id="top">
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
+        <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+</div>
+
+<!-- Navbar for small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top: 46px">
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">BAND</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">TOUR</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">MERCH</a>
+</div>
+
+<!-- Banner -->
+<section id="banner" data-video="images/banner">
+    <div class="inner">
+        <header>
+            <h1>Trot Master</h1>
+            <p>당신을 위한 최고의 트로트 커뮤니티</p>
+        </header>
+        <a href="#main" class="more">Learn More</a>
+    </div>
+</section>
+
+
+<!-- Main -->
+<div id="main">
+	<div class="inner">
+
+		<!-- Boxes -->
+		<div class="thumbnails">
+
+			<div class="box">
+				<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img
+					src="images/송가인.webp" alt="" width="600" height="338"></a>
+				<div class="inner">
+					<h3>송가인</h3>
+					<p>'미스트롯' 우승자로 전통 트로트의 정수를 선보이며 국민적인 인기를 얻은 가수</p>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="button fit"
+						data-poptrox="youtube,800x400">Watch</a>
+				</div>
+			</div>
+
+			<div class="box">
+				<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img
+					src="images/영탁.webp" alt="" width="600" height="338"></a>
+				<div class="inner">
+					<h3>영탁</h3>
+					<p>'미스터트롯' 출신으로 '찐이야' 등의 히트곡을 통해 대중적인 사랑을 받은 가수</p>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit"
+						data-poptrox="youtube,800x400">Watch</a>
+				</div>
+			</div>
+
+			<div class="box">
+				<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img
+					src="images/이찬원.jpg" alt="" width="600" height="338"></a>
+				<div class="inner">
+					<h3>이찬원</h3>
+					<p>'미스터트롯'에서 밝은 에너지와 뛰어난 가창력으로 사랑받는 트로트 가수</p>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit"
+						data-poptrox="youtube,800x400">Watch</a>
+				</div>
+			</div>
+
+			<div class="box">
+				<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img
+					src="images/임영웅.jpg" alt="" width="600" height="338"></a>
+				<div class="inner">
+					<h3>임영웅</h3>
+					<p>'미스터트롯' 우승자로 감미로운 목소리와 탄탄한 팬덤을 보유한 트로트 스타</p>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit"
+						data-poptrox="youtube,800x400">Watch</a>
+				</div>
+			</div>
+
+			<div class="box">
+				<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img
+					src="images/정동원.jpg" alt="" width="600" height="338"></a>
+				<div class="inner">
+					<h3>정동원</h3>
+					<p>어린 나이에 트로트 신동으로 주목받아 다양한 무대에서 활약하는 다재다능한 가수</p>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit"
+						data-poptrox="youtube,800x400">Watch</a>
+				</div>
+			</div>
+
+			<div class="box">
+				<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img
+					src="images/정서주.webp" alt="" width="600" height="338"></a>
+				<div class="inner">
+					<h3>정서주</h3>
+					<p>감미로운 음색과 개성 있는 스타일로 주목받고 있는 차세대 트로트 가수</p>
+					<a href="https://youtu.be/s6zR2T9vn2c" class="button fit"
+						data-poptrox="youtube,800x400">Watch</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+	<div class="inner">
+	  <div class="copyright">
+		Site made with: <a href="https://templated.co/">Templated</a>.
+	  </div>
+	  <ul class="icons">
+		<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="#" class="icon fa-facebook"><span
+			class="label">Facebook</span></a></li>
+		<li><a href="#" class="icon fa-instagram"><span
+			class="label">Instagram</span></a></li>
+		<li><a href="#" class="icon fa-envelope"><span
+			class="label">Email</span></a></li>
+	  </ul>
+	</div>
+  </footer>
+
+
+<!-- Scripts -->
+<script>
+function toggleNav() {
+    var x = document.getElementById("navDemo");
+    if (x.classList.contains("w3-show")) {
+        x.classList.remove("w3-show");
+    } else {
+        x.classList.add("w3-show");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    toggleNav(); // Ensure nav toggle is initialized properly
+});
+</script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
