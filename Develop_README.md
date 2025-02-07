@@ -2,36 +2,37 @@
 
 # 🎤 Trot_Master 개발 문서
 
-## 📑 목차
+## 📑 목차  
 
-1. [📌 프로젝트 소개](#-프로젝트-소개)
-2. [🎯 개발 목표](#-개발-목표)
-3. [👨‍👨‍👦‍👦 팀원 소개](#-팀원-소개)
-4. [🛠 기술 스택](#-기술-스택)
-5. [🏗 시스템 구조도](#-시스템-구조도)
-6. [💻 주요 구현 기능](#-주요-구현-기능)
-7. [🔍 트러블 슈팅](#-트러블-슈팅)
-8. [📈 성능 목표](#-성능-목표)
-9. [🔒 보안 고려사항](#-보안-고려사항)
-10. [📝 기술적 회고](#-기술적-회고)
-11. [🚀 향후 개선 계획](#-향후-개선-계획)
+1. [📌 프로젝트 소개](#-프로젝트-소개)  
+2. [🎯 개발 목표](#-개발-목표)  
+3. [👨‍👨‍👦‍👦 팀원 소개](#-팀원-소개)  
+4. [🛠 기술 스택](#-기술-스택)  
+5. [📚 프로젝트 디렉토리 구조](#-프로젝트-디렉토리-구조)  
+6. [🏗 시스템 구조도](#-시스템-구조도)  
+7. [🛰️ 서비스 흐름도](#-서비스-흐름도)  
+8. [💻 주요 구현 기능](#-주요-구현-기능)  
+9. [🔍 트러블 슈팅](#-트러블-슈팅)  
+10. [📈 성능 목표](#-성능-목표)  
+11. [🔒 보안 고려사항](#-보안-고려사항)  
+12. [📝 기술적 회고](#-기술적-회고)  
+13. [🚀 향후 개선 계획](#-향후-개선-계획)  
 
-## 📌 프로젝트 소개
-트로트 팬덤을 위한 올인원 플랫폼으로, 50-60대 사용자를 위한 최적화된 UI/UX를 제공하는 웹/앱 서비스입니다.
+## 📌 프로젝트 소개  
+트로트 팬덤을 위한 올인원 플랫폼으로, 50-60대 사용자를 위한 최적화된 UI/UX를 제공하는 웹/앱 서비스입니다.  
 
-## 🎯 개발 목표
-- 직관적이고 접근성 높은 UI/UX 구현
-- 실시간 사용자 인터랙션을 위한 고성능 백엔드 시스템 구축
-- 안정적인 트래픽 처리를 위한 확장 가능한 인프라 설계
-- 사용자 데이터 기반의 추천 시스템 구현
+## 🎯 개발 목표  
+- 직관적이고 접근성 높은 UI/UX 구현  
+- 실시간 사용자 인터랙션을 위한 고성능 백엔드 시스템 구축  
+- 안정적인 트래픽 처리를 위한 확장 가능한 인프라 설계  
+- 사용자 데이터 기반의 추천 시스템 구현  
 
-## 👨‍👨‍👦‍👦 팀원 소개
+## 👨‍👨‍👦‍👦 팀원 소개  
 | <img src="https://github.com/wns5120.png" width="200px"> | <img src="https://github.com/JaeHee-devSpace.png" width="200px"> | <img src="https://github.com/andytjdqls.png" width="200px"> | <img src="https://github.com/wild-turkey.png" width="200px"> |
 | :---: | :---: | :---: | :---: |
 | [유호준](https://github.com/wns5120) | [박재희](https://github.com/JaeHee-devSpace) | [이성빈](https://github.com/andytjdqls) | [김지훈](https://github.com/wild-turkey) |
 
-
-## 🛠 기술 스택
+## 🛠 기술 스택  
 
 ![Java](https://img.shields.io/badge/Java-007396?style=flat&logo=java&logoColor=white)
 ![JSP](https://img.shields.io/badge/JSP-007396?style=flat&logo=java&logoColor=white)
@@ -50,38 +51,40 @@
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)
-![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white)
-![Mermaid](https://img.shields.io/badge/Mermaid-4995DA?style=flat&logo=mermaid&logoColor=white)
-![ChatGPT](https://img.shields.io/badge/ChatGPT-412991?style=flat&logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-000000?style=flat&logo=anthropic&logoColor=white)
-![Creatie](https://img.shields.io/badge/Creatie-6200EA?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABIUlEQVQ4T7XTvUoDQRjG8d+EoBCGxIb6ABqU7AQHkKvEH0AVoF6BQegKKLQExAF2giCfQoKoFiEr7GNIRgNQFPru9c6e3sXFcuMmdmffOnMnbzKdjCa1xG5UXnAjy7nFIMq+RVd59idDAS4u16kpAu4h7fMOFeBWM6uCYL8+XYBOc2eOYiHyQuFUbNwFkX9HgHHoNzqDxCz8D4RoqB2o5snC+xy+AF67dtdzBYzNErbVk+hGaNP8LZVK1TbBToG5EOM5UhbnNxAFWdpwpwD9xot+tsh70ix6r6cR+ayMCOZCbi7BxiL6rhcoJDrMctjJ8ZgEJ4ymB/H1oFlMByQnUtG9A0J62QqHX/ZYVwAAAABJRU5ErkJggg==&logoColor=white)
 
-## 🏗 시스템 구조도
+## 📚 프로젝트 디렉토리 구조  
 
+(디렉토리 구조 설명 추가)  
 
+## 🏗 시스템 구조도  
 
-## 💻 주요 구현 기능
+(시스템 구조 다이어그램 추가)  
 
+## 🛰️ 서비스 흐름도  
+![alt text](Service.png)  
 
+## 💻 주요 구현 기능  
 
-## 🔍 트러블 슈팅
+(주요 기능 설명 추가)  
 
+## 🔍 트러블 슈팅  
 
+(트러블슈팅 사례 추가)  
 
-## 📈 성능 목표
+## 📈 성능 목표  
 
+(성능 목표 설명 추가)  
 
-## 🔒 보안 고려사항
+## 🔒 보안 고려사항  
 
+(보안 관련 설명 추가)  
 
-## 📝 기술적 회고
+## 📝 기술적 회고  
 
-## 🚀 향후 개선 계획
+(개발 과정에서의 회고 추가)  
 
+## 🚀 향후 개선 계획  
 
-
-## 🛰️ 서비스 흐름도
-![alt text](Service.png)
-
+(개선 계획 추가)  
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:8A2BE2&height=180&section=footer)
