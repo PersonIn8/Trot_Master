@@ -311,7 +311,14 @@
 - 콘서트 일정 조회 및 예매 연동  
 - 팬미팅 이벤트 신청 기능  
 
-📌 **UI 디자인 미리보기**  
+📌 **UI 디자인 설계** 
+
 ![UI 디자인 샘플](UI.png)
 
+📌 **실제 UI 디자인** 
+ # IMAGE
+
+
+
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:8A2BE2&height=180&section=footer)
+
