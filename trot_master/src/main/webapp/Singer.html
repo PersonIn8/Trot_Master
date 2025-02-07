@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>가수 프로필</title>
     <script>
-    function fetchSingerData() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const singerId = urlParams.get('id');
+        function fetchSingerData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const singerId = urlParams.get('id');
 
-        fetch('SingerController?id=' + singerId)
-            .then(response => response.json())
-            .then(data => {
-                if (!data.singer) {
-                    console.error("데이터를 가져오지 못했습니다:", data);
-                    return;
-                }
+            fetch('SingerController?id=' + singerId)
+                .then(response => response.json())
+                .then(data => {
+                    if (!data.singer) {
+                        console.error("데이터를 가져오지 못했습니다:", data);
+                        return;
+                    }
 
-                // ✅ 가수 정보 매핑
-                document.getElementById("profile-img").src = data.singer.imageUrl;
-                document.getElementById("profile-name").innerText = data.singer.name;
-                document.getElementById("profile-debut").innerText = "📅 데뷔일: " + data.singer.debutDate;
-                document.getElementById("profile-social").innerText = "📍 소셜 미디어: " + data.singer.socialMedia;
-                document.getElementById("profile-score").innerText = "⭐ 총 점수: " + data.singer.totalPoint;
+                    // ✅ 가수 정보 매핑
+                    document.getElementById("profile-img").src = data.singer.imageUrl || "images/default.jpg";
+                    document.getElementById("profile-name").innerText = data.singer.name;
+                    document.getElementById("profile-debut").innerText = "📅 데뷔일: " + data.singer.debutDate;
+                    document.getElementById("profile-social").innerText = "📍 소셜 미디어: " + data.singer.socialMedia;
+                    document.getElementById("profile-score").innerText = "⭐ 총 점수: " + data.singer.totalPoint;
 
-                // ✅ 추가정보 (totalPoint 내림차순 목록)
-                let topSingersList = document.getElementById("top-singers");
-                topSingersList.innerHTML = "";
-                data.topSingers.forEach(singer => {
-                    let li = document.createElement("li");
-                    li.textContent = singer;
-                    topSingersList.appendChild(li);
-                });
-            })
-            .catch(error => console.error('데이터 가져오기 오류:', error));
-    }
+                    // ✅ 추가정보 (totalPoint 내림차순 목록)
+                    let topSingersList = document.getElementById("top-singers");
+                    topSingersList.innerHTML = "";
+                    data.topSingers.forEach(singer => {
+                        let li = document.createElement("li");
+                        li.textContent = singer;
+                        topSingersList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('데이터 가져오기 오류:', error));
+        }
 
-    window.onload = fetchSingerData;
+        window.onload = fetchSingerData;
     </script>
     <style>
+        /* ✅ 전체 UI 스타일 */
         body {
             font-family: "Lato", sans-serif;
             background-color: #1e1e1e;
@@ -58,6 +59,7 @@
             padding: 20px;
         }
 
+        /* ✅ 프로필 섹션 (좌측) */
         .profile-section {
             display: flex;
             flex-direction: column;
@@ -68,11 +70,18 @@
         .profile-image {
             width: 220px;
             height: 220px;
-            background-color: #c4c4c4;
             border-radius: 50%;
+            background-color: #c4c4c4;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .extra-box {
@@ -82,8 +91,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
+        .extra-box h3 {
+            margin-bottom: 10px;
+        }
+
+        /* ✅ 정보 섹션 (우측) */
         .info-section {
             display: flex;
             flex-direction: column;
@@ -105,20 +120,38 @@
 </head>
 <body>
     <div class="container">
+        <!-- ✅ 좌측 프로필 -->
         <div class="profile-section">
-            <img id="profile-img" src="" alt="가수 이미지" class="profile-image">
+            <div class="profile-image">
+                <img id="profile-img" src="" alt="가수 이미지">
+            </div>
             <div class="extra-box">
                 <h3>가수 랭킹</h3>
                 <ul id="top-singers"></ul>
             </div>
         </div>
 
+        <!-- ✅ 우측 정보 -->
         <div class="info-section">
             <div class="card">
                 <h2 id="profile-name">가수 이름</h2>
                 <p id="profile-debut"></p>
                 <p id="profile-social"></p>
                 <p id="profile-score"></p>
+            </div>
+
+            <div class="card">
+                <h2>가수 소개</h2>
+                <p>이 가수는 감미로운 목소리와 뛰어난 가창력으로 많은 사랑을 받고 있습니다. 다양한 히트곡과 무대를 통해 팬들과 소통하고 있습니다.</p>
+            </div>
+
+            <div class="card">
+                <h2>대표 앨범</h2>
+                <ul>
+                    <li>앨범 1 - 히트곡 A</li>
+                    <li>앨범 2 - 히트곡 B</li>
+                    <li>앨범 3 - 히트곡 C</li>
+                </ul>
             </div>
         </div>
     </div>
