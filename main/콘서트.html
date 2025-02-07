@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>콘서트 정보 페이지</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif;
+    }
+
+    .w3-container {
+      text-align: center;
+    }
+
+    .w3-main {
+      margin-top: 80px;
+    }
+
+    /* 네비게이션 바 공간 확보 */
+
+    /* 네비게이션 바 스타일 */
+    .w3-top {
+      width: 100%;
+      left: 0;
+      right: 0;
+      position: fixed;
+      z-index: 1000;
+    }
+
+    .w3-bar {
+      width: 100%;
+    }
+
+    .w3-container {
+      max-width: 100%;
+    }
+
+    #footer {
+      width: 100%;
+      position: relative;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background-color: #111;
+      padding: 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    .w3-bar {
+      width: 100%;
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+    }
+
+    .footer-icons a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .footer-icons a:hover {
+      color: #bbb;
+    }
+  </style>
+</head>
+
+<body class="w3-light-grey w3-content">
+
+  <!-- Navbar -->
+	<div class="w3-top">
+		<div class="w3-bar w3-black w3-card">
+			<a
+				class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+				href="javascript:void(0)" onclick="myFunction()"
+				title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a
+				href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a> <a
+				href="#band"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
+			<a href="#tour"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+			<a href="#contact"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+			<a href="javascript:void(0)"
+				class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
+				class="fa fa-search"></i></a>
+		</div>
+	</div>
+	<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+	<div id="navDemo"
+		class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
+		style="margin-top: 46px">
+		<a href="#band" class="w3-bar-item w3-button w3-padding-large"
+			onclick="myFunction()">BAND</a> <a href="#tour"
+			class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+		<a href="#contact" class="w3-bar-item w3-button w3-padding-large"
+			onclick="myFunction()">CONTACT</a> <a href="#"
+			class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+	</div>
+
+
+  <!-- 콘서트 정보 페이지 -->
+  <div class="w3-main w3-padding">
+    <h2 class="w3-center">콘서트 정보</h2>
+
+    <!-- 콘서트 리스트 -->
+    <div class="w3-row-padding w3-center" style="margin-top: 50px;">
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="concert1.jpg" alt="콘서트 1" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>가수 A 월드 투어</b></p>
+          <p>일정: 2025년 5월 10일</p>
+          <p>장소: 서울 올림픽 경기장</p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="concert2.jpg" alt="콘서트 2" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>밴드 B 라이브</b></p>
+          <p>일정: 2025년 6월 15일</p>
+          <p>장소: 부산 벡스코</p>
+        </div>
+      </div>
+      <div class="w3-third w3-container w3-margin-bottom">
+        <img src="concert3.jpg" alt="콘서트 3" style="width:100%" class="w3-hover-opacity">
+        <div class="w3-container w3-white">
+          <p><b>솔로 가수 C 팬미팅</b></p>
+          <p>일정: 2025년 7월 20일</p>
+          <p>장소: 대구 엑스코</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- Footer -->
+<footer id="footer">
+  <div class="inner">
+    <div class="copyright">
+      Site made with: <a href="https://templated.co/">Templated</a>.
+    </div>
+    <ul class="icons">
+      <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon fa-facebook"><span
+          class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon fa-instagram"><span
+          class="label">Instagram</span></a></li>
+      <li><a href="#" class="icon fa-envelope"><span
+          class="label">Email</span></a></li>
+    </ul>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

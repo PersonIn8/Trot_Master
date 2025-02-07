@@ -65,6 +65,12 @@
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white)
 ![Slack](https://img.shields.io/badge/Slack-4A154B?style=flat&logo=slack&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white)
+![Mermaid](https://img.shields.io/badge/Mermaid-4995DA?style=flat&logo=mermaid&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-412991?style=flat&logo=openai&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-000000?style=flat&logo=anthropic&logoColor=white)
+![Creatie](https://img.shields.io/badge/Creatie-6200EA?style=flat&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABIUlEQVQ4T7XTvUoDQRjG8d+EoBCGxIb6ABqU7AQHkKvEH0AVoF6BQegKKLQExAF2giCfQoKoFiEr7GNIRgNQFPru9c6e3sXFcuMmdmffOnMnbzKdjCa1xG5UXnAjy7nFIMq+RVd59idDAS4u16kpAu4h7fMOFeBWM6uCYL8+XYBOc2eOYiHyQuFUbNwFkX9HgHHoNzqDxCz8D4RoqB2o5snC+xy+AF67dtdzBYzNErbVk+hGaNP8LZVK1TbBToG5EOM5UhbnNxAFWdpwpwD9xot+tsh70ix6r6cR+ayMCOZCbi7BxiL6rhcoJDrMctjJ8ZgEJ4ymB/H1oFlMByQnUtG9A0J62QqHX/ZYVwAAAABJRU5ErkJggg==&logoColor=white)
+
 
 ## 📚 프로젝트 디렉토리 구조  
 
