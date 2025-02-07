@@ -1,127 +1,140 @@
 <!DOCTYPE HTML>
-<html>
-
+<html lang="ko">
 <head>
-	<title>Full Motion</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>
-		body {
-			font-family: "Lato", sans-serif;
-		}
+    <title>Full Motion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body { font-family: "Lato", sans-serif; }
+        .mySlides { display: none; }
+        .w3-top { position: fixed; width: 100%; z-index: 9999; }
+        .nav-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        .nav-btn:hover { background-color: #d32f2f; }
+        .username-display {
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+          /* 사용자 이름 표시 스타일 */
+    .username-display {
+        color: white;
+        background-color: #333;
+        padding: 8px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-weight: bold;
+        font-size: 14px;
+        display: inline-block;
+    }
 
-		.mySlides {
-			display: none;
-		}
+    /* 로그인, 회원가입 버튼과 같은 스타일 */
+    .nav-btn {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 5px;
+    }
 
-		.w3-top {
-			position: fixed;
-			width: 100%;
-			z-index: 9999;
-		}
+    .nav-btn:hover {
+        background-color: #d32f2f;
+    }
 
-		#banner {
-			position: relative;
-			z-index: 1;
-		}
+    /* 사용자 이름과 로그아웃 버튼 정렬 */
+    .nav-right {
+        display: flex;
+        align-items: center;
+    }
+    </style>
+    <script>
+        function openPopup(url) {
+            let width = 500, height = 600;
+            if (url.includes("login.jsp")) {
+                width = 400; height = 350;
+            } else if (url.includes("register.jsp")) {
+                width = 420; height = 480;
+            }
+            let popup = window.open(url, "popupWindow", `width=${width},height=${height},scrollbars=yes`);
+            if (popup) popup.focus();
+        }
 
-		/* 네비게이션 버튼 스타일 */
-		.nav-btn {
-			background-color: #f44336;
-			color: white;
-			border: none;
-			padding: 10px 15px;
-			margin-left: 10px;
-			cursor: pointer;
-			font-size: 14px;
-			border-radius: 5px;
-		}
+        function updateNavBar() {
+            var navBar = document.getElementById("authButtons");
+            var username = sessionStorage.getItem("username");
 
-		.nav-btn:hover {
-			background-color: #d32f2f;
-		}
-	</style>
-	<script>
-		function openPopup(url) {
-			window.open(url, "popupWindow", "width=500,height=600,scrollbars=yes");
-		}
+            if (sessionStorage.getItem("user")) {
+                navBar.innerHTML = `
+                    <div class="nav-right">
+                        <span class="username-display">${username}</span>
+                        <button class="w3-bar-item w3-button nav-btn" onclick="handleLogout()">로그아웃</button>
+                    </div>
+                `;
+            } else {
+                navBar.innerHTML = `
+                    <button class="w3-bar-item w3-button nav-btn" onclick="openPopup('register.jsp')">회원가입</button>
+                    <button class="w3-bar-item w3-button nav-btn" onclick="openPopup('login.jsp')">로그인</button>
+                `;
+            }
+        }
 
-		function handleLogout() {
-			fetch('LogoutController', { method: 'POST' })
-				.then(response => window.location.reload());
-		}
-	</script>
+        function handleLogout() {
+            fetch('LogoutController', { method: 'POST' })
+                .then(() => {
+                    sessionStorage.removeItem("user");
+                    sessionStorage.removeItem("username");
+                    updateNavBar();
+                });
+        }
+
+        window.onload = updateNavBar;
+    </script>
 </head>
 
 <body id="top">
 
+    <!-- ✅ Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a> 
+            <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">가수 정보</a> 
+            <a href="굿즈.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">굿즈</a>
+            <a href="콘서트.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">콘서트</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">커뮤니티</a>
+            <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right">
+                <i class="fa fa-search"></i>
+            </a>
+            <div class="w3-right" id="authButtons"></div>
+        </div>
+    </div>
 
-	<!-- ✅ 로그인 여부 확인 -->
-	<script>
-		var isLoggedIn = sessionStorage.getItem("user") !== null;
-	</script>
-
-
-	<!-- ✅ Navbar -->
-	<div class="w3-top">
-		<div class="w3-bar w3-black w3-card">
-			<a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
-				href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu"><i
-					class="fa fa-bars"></i></a>
-			<a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-			<a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">가수 정보</a>
-			<a href="굿즈.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">굿즈</a>
-			<a href="콘서트.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">콘서트</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">커뮤니티</a>
-			<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
-					class="fa fa-search"></i></a>
-
-			<!-- ✅ 로그인 상태에 따른 버튼 -->
-			<div class="w3-right">
-				<script>
-					if (!isLoggedIn) {
-						document.write('<button class="w3-bar-item w3-button nav-btn" onclick="openPopup(\'register.jsp\')">회원가입</button>');
-						document.write('<bu					n class="w3-bar-item w3-button nav-btn" onclick="openPopup(\'login.jsp\')">로그인</button>');
-					} else {
-						document.write('<button class="w3-bar-item w3-button nav-btn" onclick="handleLogout()">로그아웃</button>');
-					}
-				</script>
-			</div>
-		</div>
-	</div>
+    <!-- ✅ Banner -->
+    <section id="banner" data-video="images/banner">
+        <div class="inner">
+            <header>
+                <h1>Trot Master</h1>
+                <p>당신을 위한 최고의 트로트 커뮤니티</p>
+            </header>
+            <a href="#main" class="more">Learn More</a>
+        </div>
+    </section>
 
 
-	<!-- Navbar for small screens -->
-	<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
-		style="margin-top: 46px">
-		<a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">가수 정보</a>
-		<a href="굿즈.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">굿즈</a>
-		<a href="#콘서트.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">콘서트</a>
-		<a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">커뮤니티</a>
-	</div>
-
-
-	<!-- ✅ Banner -->
-	<section id="banner" data-video="images/banner">
-		<div class="inner">
-			<header>
-				<h1>Trot Master</h1>
-				<p>당신을 위한 최고의 트로트 커뮤니티</p>
-			</header>
-			<a href="#main" class="more">Learn More</a>
-		</div>
-	</section>
-
-
-
-
-
-
-	<!-- ✅ Main -->
+	<!-- ✅ Main Content -->
 	<div id="main">
 		<div class="inner">
 
@@ -198,34 +211,34 @@
 
 		</div>
 	</div>
+	
 
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="inner">
-			<div class="copyright">
-				Site made with: <a href="https://templated.co/">Templated</a>.
-			</div>
-			<ul class="icons">
-				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-		</div>
-	</footer>
 
-	<!-- ✅ JavaScript -->
-	<script>
-		function toggleNav() {
-			var x = document.getElementById("navDemo");
-			if (x.classList.contains("w3-show")) {
-				x.classList.remove("w3-show");
-			} else {
-				x.classList.add("w3-show");
-			}
-		}
-	</script>
+    <!-- ✅ Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <div class="copyright">
+                Site made with: <a href="https://templated.co/">Templated</a>.
+            </div>
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            var x = document.getElementById("navDemo");
+            if (x.classList.contains("w3-show")) {
+                x.classList.remove("w3-show");
+            } else {
+                x.classList.add("w3-show");
+            }
+        }
+    </script>
 
 </body>
-
 </html>

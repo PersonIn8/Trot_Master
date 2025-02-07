@@ -26,10 +26,19 @@ public class LoginController extends HttpServlet {
         UserDTO user = userDAO.loginUser(email, password);
 
         if (user != null) {
-            // 3. 로그인 성공 → 세션에 저장 후 메인 페이지로 이동
+            // 3. 로그인 성공 → 세션 저장
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
-            response.sendRedirect("home.jsp"); // ✅ 로그인 후 이동할 페이지 (예: 메인 페이지)
+            session.setAttribute("username", user.getUsername()); // ✅ 세션에 사용자 이름 저장
+
+            // ✅ 팝업 창을 닫고 부모 창(sessionStorage) 업데이트
+            response.setContentType("text/html; charset=UTF-8");
+            response.getWriter().println("<script>");
+            response.getWriter().println("window.opener.sessionStorage.setItem('username', '" + user.getUsername() + "');"); // 🛑 추가
+            response.getWriter().println("window.opener.sessionStorage.setItem('user', 'loggedIn');"); // 로그인 상태 저장
+            response.getWriter().println("window.opener.updateNavBar();"); // 🛑 네비 업데이트 추가
+            response.getWriter().println("window.close();"); 
+            response.getWriter().println("</script>");
         } else {
             // 4. 로그인 실패 → 다시 로그인 페이지로 이동
             response.sendRedirect("login.jsp?error=invalid");
