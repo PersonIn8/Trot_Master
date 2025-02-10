@@ -4,11 +4,12 @@
 
 ## 📑 목차  
 
+
 1. [📌 프로젝트 소개](#-프로젝트-소개)  
 
-2. [🎯 개발 목표](#-개발-목표)  
+2. [🎯 서비스 목표](#-서비스-목표)  
 
-3. [👨‍👨‍👦‍👦 팀원 소개](#-팀원-소개)  
+3. [📈 기술적 목표](#-기술적-목표)  
 
 4. [🛠 기술 스택](#-기술-스택)  
 
@@ -18,48 +19,21 @@
 
 7. [🛰️ 서비스 흐름도](#-서비스-흐름도)  
 
-8. [🛢 스키마 ](#-스키마)
+8. [🛢 스키마](#-스키마)  
 
-8. [💻 주요 기능](#-주요-기능)  
+9. [💻 주요 기능](#-주요-기능)  
 
-9. [🔍 트러블 슈팅](#-트러블-슈팅)  
-
-10. [📈 성능 목표](#-성능-목표)  
+10. [⚠ 트러블 슈팅](#-트러블-슈팅)  
 
 11. [🔒 보안 고려사항](#-보안-고려사항)  
 
-12. [📝 기술적 회고](#-기술적-회고)  
+12. [🙂 프로젝트 회고](#-프로젝트-회고)  
 
-13. [🚀 향후 개선 계획](#-향후-개선-계획)  
+13. [👨‍👨‍👦‍👦 팀원 소개](#-팀원-소개)  
+
 
 ## 📌 프로젝트 소개  
 트로트 팬덤을 위한 올인원 플랫폼으로, 50-60대 사용자를 위한 최적화된 UI/UX를 제공하는 웹/앱 서비스입니다.  
-
-### 💻 주요 기능  
-이 서비스는 트로트 팬을 위한 **팬 커뮤니티 & 굿즈 거래 플랫폼**으로, 팬들이 좋아하는 가수와 소통하고 관련 상품을 거래할 수 있는 기능을 제공합니다.  
-
-1. **🎤 팬 커뮤니티**  
-   - 가수별 팬클럽 운영 (게시판, 댓글, 좋아요 기능)  
-   - 팬 활동 랭킹 시스템 (게시글 작성, 좋아요, 이벤트 참여 등)  
-
-2. **🛍️ 트로트 굿즈 마켓**  
-   - 공식 굿즈 판매 (소속사 및 제작사와 제휴)  
-   - 팬 간 비공식 굿즈 거래 중개  
-   - 굿즈 리뷰 및 평가 시스템  
-
-3. **💖 팬덤 활동 & 서포트 기능**  
-   - 가수 후원 프로젝트 (커피차, 밥차 지원)  
-   - 팬 기부 및 후원 랭킹 시스템  
-
-4. **🎫 공연 & 이벤트**  
-   - 트로트 공연 및 팬미팅 일정 제공  
-   - 티켓 예매 사이트 연동  
-   - 이벤트 알림 기능  
-
-5. **📢 소셜 미디어 & 팬 참여 콘텐츠**  
-   - 가수별 SNS 계정 연동 (인스타그램, 유튜브, 페이스북 등)  
-   - 트로트 관련 뉴스, 신곡 발매 정보 제공  
-   - 사용자 맞춤형 추천 시스템 (팬 활동 기반)  
 
 ## 🎯 서비스 목표  
 - 직관적이고 접근성 높은 UI/UX 구현  
@@ -71,6 +45,9 @@
 ## 📈 기술적 목표  
 이 프로젝트의 개발 목표는 **Servlet과 JSP를 활용하여 MVC 패턴을 연습하고, 세션 기반 로그인 및 인증 시스템을 구현**하는 것입니다.  
 
+<details>
+    <summary>상세 기술 구현</summary>
+    
 1. **🌐 웹 애플리케이션 기본 구조 구현**  
    - Servlet + JSP를 활용한 **MVC 패턴 적용**  
    - Frontend와 Backend 간 **데이터 바인딩 및 요청 처리**  
@@ -99,22 +76,11 @@
 7. **⚡ AJAX & JavaScript 활용**  
    - 로그인/회원가입 시 실시간 유효성 검사  
    - AJAX를 활용한 비동기 데이터 로딩  
-
-8. **📢 소셜 미디어 연동 & 공유 기능**  
-   - 가수의 소셜 미디어 계정 자동 연동  
-   - SNS 공유 버튼을 통한 팬 활동 활성화  
-
+</details>
 
 ##  **💥최종 목표**  
 이 프로젝트를 통해 Servlet과 JSP를 활용한 **MVC 패턴 기반 웹 애플리케이션을 구축하는 경험을 쌓고**,  
-추후 Spring Framework를 도입하여 **더 확장성 있는 백엔드 구조를 학습하는 기반**을 다지는 것입니다. 🚀🔥
-
-
-
-## 👨‍👨‍👦‍👦 팀원 소개  
-| <img src="https://github.com/wns5120.png" width="200px"> | <img src="https://github.com/JaeHee-devSpace.png" width="200px"> | <img src="https://github.com/andytjdqls.png" width="200px"> | <img src="https://github.com/wild-turkey.png" width="200px"> |
-| :---: | :---: | :---: | :---: |
-| [유호준](https://github.com/wns5120) | [박재희](https://github.com/JaeHee-devSpace) | [이성빈](https://github.com/andytjdqls) | [김지훈](https://github.com/wild-turkey) |
+추후 Spring Framework를 도입하여 **더 확장성 있는 백엔드 구조를 학습하기 위한 기반**을 다지는 것입니다.
 
 ## 🛠 기술 스택  
 
@@ -369,6 +335,33 @@ graph TD;
 
 </details>
 
+## 💻 주요 기능  
+이 서비스는 트로트 팬을 위한 **팬 커뮤니티 & 굿즈 거래 플랫폼**으로, 팬들이 좋아하는 가수와 소통하고 관련 상품을 거래할 수 있는 기능을 제공합니다.  
+
+1. **🎤 팬 커뮤니티**  
+   - 가수별 팬클럽 운영 (게시판, 댓글, 좋아요 기능)  
+   - 팬 활동 랭킹 시스템 (게시글 작성, 좋아요, 이벤트 참여 등)  
+
+2. **🛍️ 트로트 굿즈 마켓**  
+   - 공식 굿즈 판매 (소속사 및 제작사와 제휴)  
+   - 팬 간 비공식 굿즈 거래 중개  
+   - 굿즈 리뷰 및 평가 시스템  
+
+3. **💖 팬덤 활동 & 서포트 기능**  
+   - 가수 후원 프로젝트 (커피차, 밥차 지원)  
+   - 팬 기부 및 후원 랭킹 시스템  
+
+4. **🎫 공연 & 이벤트**  
+   - 트로트 공연 및 팬미팅 일정 제공  
+   - 티켓 예매 사이트 연동  
+   - 이벤트 알림 기능  
+
+5. **📢 소셜 미디어 & 팬 참여 콘텐츠**  
+   - 가수별 SNS 계정 연동 (인스타그램, 유튜브, 페이스북 등)  
+   - 트로트 관련 뉴스, 신곡 발매 정보 제공  
+   - 사용자 맞춤형 추천 시스템 (팬 활동 기반)  
+
+
 ## ⚠ 트러블 슈팅  
 
 <details>
@@ -537,14 +530,168 @@ request.setAttribute("socialMediaMap", socialMediaMap);
 
 ## 🔒 보안 고려사항  
 
-(보안 관련 설명 추가)  
+| 문제 | 위험 수준 | 해결 방법 | 적용 여부 |
+|------|---------|------------|------------|
+| **비밀번호 해싱 미적용** | 🔴 Critical | `BCrypt` 사용하여 해싱 | ❌ 미적용 |
+| **SQL Injection** | 🟠 High | `PreparedStatement` 사용 + 입력 검증 추가 | ✅ 적용됨 |
+| **입력값 검증 부족** | 🟠 High | Whitelist Validation 적용 (이메일, 패스워드 검증) | ❌ 미적용 |
+| **세션 고정 공격** | 🟠 High | 로그인 후 세션 무효화 및 재생성 (`session.invalidate();`) | ❌ 미적용 |
+| **XSS 공격 가능성** | 🟡 Medium | `HTML Escape`, `CSP` 적용 | ❌ 미적용 |
+| **CSRF 공격 가능성** | 🟡 Medium | CSRF Token 사용 및 Referer 검증 | ❌ 미적용 |
+| **오류 메시지 정보 노출** | 🟢 Low | 에러 메시지 일반화 (`?error=email_exists` → `?error=general`) | ❌ 미적용 |
+| **로그인 실패 시 동일한 메시지 출력 필요** | 🟢 Low | "이메일 또는 비밀번호가 잘못되었습니다."로 통일 | ❌ 미적용 |
+
+<details>
+    <summary> ▶ 상세보기 </summary>
+
+### **🔴 1. 비밀번호 해싱 미적용 (Critical)**
+📌 **문제:**  
+- `UserDAO.java`에서 **비밀번호가 평문(Plain Text)으로 저장**되고 있음.  
+- `loginUser()`에서 비밀번호 비교 시에도 `password = ?` 형태로 직접 비교함.  
+
+📌 **해결 방법:**  
+✅ **BCrypt 해싱 적용 (Spring Security 사용 가능)**  
+```java
+import org.mindrot.jbcrypt.BCrypt;
+
+// 비밀번호 해싱하여 저장
+String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+```
+- 회원가입 시 **해싱된 비밀번호** 저장  
+- 로그인 시 입력한 비밀번호를 `BCrypt.checkpw()`로 검증  
+
+---
+
+### **🟠 2. SQL Injection 취약점**
+📌 **문제:**  
+- SQL 쿼리 실행 시, `PreparedStatement`를 사용하지만 일부 입력값 검증이 부족함.  
+- 예를 들어, `loginUser(String email, String password)`에서 **입력값이 직접 바인딩되면 SQL Injection 위험** 존재.  
+
+📌 **해결 방법:**  
+✅ **입력값 검증 강화 및 SQL Parameterized Query 사용**  
+```java
+String sql = "SELECT user_id, username FROM Users WHERE email = ? AND password = ?";
+```
+- 현재 `PreparedStatement`를 사용하고 있어서 기본적인 보호는 되지만,  
+  **비밀번호 해싱이 미적용된 상태라면 공격자가 해싱되지 않은 비밀번호를 SQL Injection으로 테스트할 가능성이 있음.**  
+
+✅ **Whitelist 기반 입력 검증**  
+- `email` 필드에 SQL 예약어 (`' OR 1=1 --` 같은 패턴) 검증 추가 필요.  
+```java
+if (!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
+    throw new IllegalArgumentException("Invalid email format");
+}
+```
+
+---
+
+### **🟠 3. 세션 고정(Session Fixation) 가능성**
+📌 **문제:**  
+- 로그인 성공 후 **기존 세션을 유지한 채 사용자 정보를 저장**  
+- 공격자가 로그인 전 세션을 생성한 후 피해자가 사용하면 세션을 가로챌 가능성 있음.  
+
+📌 **해결 방법:**  
+✅ **로그인 성공 후 세션 무효화 및 재생성**  
+```java
+HttpSession oldSession = request.getSession(false);
+if (oldSession != null) {
+    oldSession.invalidate(); // 기존 세션 제거
+}
+HttpSession newSession = request.getSession(true); // 새로운 세션 생성
+```
+- 로그인 성공 후 **새로운 세션을 생성**하고 **기존 세션을 무효화**해야 함.  
+
+✅ **세션 ID 보안 강화**  
+- `HttpOnly`, `Secure`, `SameSite=strict` 옵션을 활성화해 **세션 탈취를 방어**  
+```java
+session.setAttribute("user", user);
+session.setMaxInactiveInterval(1800); // 30분 유지
+response.setHeader("Set-Cookie", "JSESSIONID=" + session.getId() + "; HttpOnly; Secure; SameSite=Strict");
+```
+
+---
+
+### **🟡 4. XSS (Cross-Site Scripting) 가능성**
+📌 **문제:**  
+- `register_fail.jsp`, `login.jsp?error=invalid` 같은 곳에서 **입력값이 직접 출력될 가능성이 있음.**  
+- 예를 들어,  
+  ```jsp
+  <p><%= request.getParameter("error") %></p>
+  ```
+  **이런 코드가 있으면 `error=<script>alert('XSS')</script>` 공격 가능**  
+
+📌 **해결 방법:**  
+✅ **출력 시 HTML Escape 적용**  
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="errorMsg" class="org.apache.commons.text.StringEscapeUtils" />
+<p><%= errorMsg.escapeHtml(request.getParameter("error")) %></p>
+```
+✅ **CSP (Content Security Policy) 적용**  
+- 웹서버에서 `Content-Security-Policy` 헤더 설정  
+```java
+response.setHeader("Content-Security-Policy", "default-src 'self'");
+```
+- **현재 CSP 적용이 안 되어 있어서 보안이 취약함.**  
+
+---
+
+### **🟡 5. CSRF (Cross-Site Request Forgery) 취약점**
+📌 **문제:**  
+- `LogoutController`에서 `doPost()` 방식 사용하지만, CSRF 방어 없음  
+- CSRF 공격으로 인해 사용자가 **의도치 않게 로그아웃되거나 계정이 변경될 가능성** 존재  
+- **Referer 검증이 없어서 공격자가 CSRF 요청을 보낼 수 있음**  
+
+📌 **해결 방법:**  
+✅ **CSRF Token 적용 (Hidden Form Field 사용)**  
+```jsp
+<input type="hidden" name="csrf_token" value="<%= session.getAttribute(\"csrf_token\") %>">
+```
+✅ **Referer 검증 추가**  
+```java
+String referer = request.getHeader("Referer");
+if (referer == null || !referer.startsWith("https://yourdomain.com")) {
+    response.sendError(HttpServletResponse.SC_FORBIDDEN);
+    return;
+}
+```
+- **현재 Referer 검증이 빠져 있어 공격에 취약함.**  
+
+---
+
+### **🟢 6. 오류 메시지 정보 노출 (정보 노출 위험)**
+📌 **문제:**  
+- `register_fail.jsp?error=email_exists` 같은 URL이 그대로 노출됨  
+- 공격자는 `?error=email_exists`, `?error=invalid_password` 등을 테스트하며 계정 존재 여부를 알아낼 수 있음.  
+
+📌 **해결 방법:**  
+✅ **에러 메시지 일반화**  
+```java
+response.sendRedirect("register_fail.jsp?error=general");
+```
+✅ **로그인 실패 시 동일한 메시지 출력**  
+```jsp
+<p>이메일 또는 비밀번호가 잘못되었습니다.</p>
+```
+- **현재는 로그인 실패 시 특정한 메시지를 노출하지만, 이를 일반적인 메시지로 변경해야 함.**  
+
+</details>
 
 ## 🙂 프로젝트 회고  
 
-(개발 과정에서의 회고 추가)  
+- JSP와 MVC 패턴을 활용하여 웹사이트를 개발하면서, 다양한 기술을 유기적으로 연계하는 경험을 할 수 있어 의미 있는 프로젝트였다. <br>
+- 데이터베이스(DB), HTML, Java, JSP 등 여러 요소를 조합하여 하나의 웹사이트를 완성하는 과정은 쉽지 않았지만, 전반적인 웹 개발 흐름을 이해하는 데 큰 도움이 되었다. <br>
 
-## 🚀 향후 개선 계획  
+- 가장 어려웠던 점은 다수의 데이터베이스 테이블과 여러 개의 페이지가 서로 영향을 주지 않도록 관리하는 것이었다. 또한, 4명이 협업하면서 Git을 활용해 여러 파일을 동시에 수정하다 보니, 충돌(conflict) 문제가 빈번하게 발생했다. 이를 해결하기 위해 코드 작성 전후로 커밋 및 브랜치 전략을 명확히 수립하고, 정기적인 코드 리뷰와 소통을 강화하는 등의 노력을 기울였다. <br>
 
-(개선 계획 추가)  
+- 이번 프로젝트를 통해 웹 애플리케이션 개발 과정 전반을 경험하고, 협업 과정에서의 문제 해결 능력을 키울 수 있었다는 점에서 큰 의미가 있었다.<br>
+
+- 목표를 처음부터 크게 잡아서 구현할 수 있는 시간이 부족하여, 기능 중 몇몇은 구현하지 못하였다.<br>
+
+## 👨‍👨‍👦‍👦 팀원 소개  
+| <img src="https://github.com/wns5120.png" width="200px"> | <img src="https://github.com/JaeHee-devSpace.png" width="200px"> | <img src="https://github.com/andytjdqls.png" width="200px"> | <img src="https://github.com/wild-turkey.png" width="200px"> |
+| :---: | :---: | :---: | :---: |
+| [유호준](https://github.com/wns5120) | [박재희](https://github.com/JaeHee-devSpace) | [이성빈](https://github.com/andytjdqls) | [김지훈](https://github.com/wild-turkey) |
+
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=0:00BFFF,100:8A2BE2&height=180&section=footer)
