@@ -1,10 +1,12 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,35 +22,55 @@ public class SingerController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
 
-        int singerId = Integer.parseInt(request.getParameter("id"));
+        String idParam = request.getParameter("id");
+        if (idParam == null || idParam.isEmpty()) {
+            System.out.println("❌ [ERROR] 요청된 id 값이 없음.");
+            response.sendRedirect("error.jsp");
+            return;
+        }
 
-        // ✅ Singer 정보 가져오기
-        SingerDTO singer = SingerDAO.getSingerById(singerId);
+        try {
+            int singerId = Integer.parseInt(idParam);
+            SingerDTO singer = SingerDAO.getSingerById(singerId);
+            List<String> topSingers = SingerDAO.getTopSingersByPoint();
 
-        // ✅ TotalPoint 내림차순 랭킹 가져오기
-        List<String> topSingers = SingerDAO.getTopSingersByPoint();
-        
-        // ✅ JSON 변환
-        Gson gson = new Gson();
-        String json = gson.toJson(new SingerResponse(singer, topSingers));
+            if (singer == null) {
+                System.out.println("❌ [ERROR] ID: " + singerId + "에 해당하는 가수 데이터 없음.");
+                response.sendRedirect("error.jsp");
+                return;
+            }
 
-        PrintWriter out = response.getWriter();
-        out.print(json);
-        out.flush();
-    }
+            // ✅ 소셜 미디어 JSON을 Map<String, String>으로 변환
+            String socialMediaJson = singer.getSocialMedia();
+            Map<String, String> socialMediaMap = null;
 
-    // JSON 응답용 내부 클래스
-    class SingerResponse {
-        SingerDTO singer;
-        List<String> topSingers;
+            if (socialMediaJson != null && !socialMediaJson.isEmpty()) {
+                try {
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<Map<String, String>>() {}.getType();
+                    socialMediaMap = gson.fromJson(socialMediaJson, type);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
 
-        public SingerResponse(SingerDTO singer, List<String> topSingers) {
-            this.singer = singer;
-            this.topSingers = topSingers;
+            // ✅ JSP에서 사용 가능하도록 request에 저장
+            request.setAttribute("singer", singer);
+            request.setAttribute("topSingers", topSingers);
+            request.setAttribute("socialMediaMap", socialMediaMap);
+
+            // ✅ JSP로 포워딩
+            request.getRequestDispatcher("Singer.jsp").forward(request, response);
+
+        } catch (NumberFormatException e) {
+            System.out.println("❌ [ERROR] 잘못된 숫자 형식의 ID: " + idParam);
+            response.sendRedirect("error.jsp");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("❌ [ERROR] 서버 오류 발생.");
+            response.sendRedirect("error.jsp");
         }
     }
 }
