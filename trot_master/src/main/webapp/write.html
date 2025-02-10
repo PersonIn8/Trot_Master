@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.mySlides {
+    display: none;
+}
+
+.w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+#banner {
+    position: relative;
+    z-index: 1;
+}
+</style>
+</head>
+<body id="top">
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="굿즈.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">굿즈</a>
+        <a href="콘서트.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">콘서트</a>
+        <a href="board?command=allList" class="w3-bar-item w3-button w3-padding-large w3-hide-small">커뮤니티</a>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+</div>
+
+<!-- Navbar for small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top: 46px">
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">가수 정보</a>
+    <a href="굿즈.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">굿즈</a>
+    <a href="#콘서트.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">콘서트</a>
+    <a href="board?command=allList" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">커뮤니티</a>
+</div>
+<SCRIPT language=javascript>
+
+/* 각 입력 input tag인 입력 form에 입력 여부 검증 하는 java script 코드 
+ */   
+
+function checkValid() {
+    var f = window.document.writeForm;
+		
+	if ( f.author.value == "") {
+	    alert( "작성자를 입력해 주세요." );
+		return false;
+    }
+	if ( f.email.value == "" ) {
+		alert( "전자메일을 입력해 주세요." );
+		return false;
+	}
+	if ( f.title.value == "" ) {
+		alert( "제목을 입력해 주세요." );
+		return false;
+	}
+	if ( f.password.value == "" ) {
+        alert( "비밀번호를 입력해 주세요" );
+        return false;
+    }
+	if ( f.content.value == "" ) {
+        alert( "글 내용을 입력해 주세요." );
+        return false;
+    }
+    return true;
+}
+</SCRIPT>
+<body>
+
+
+<form name="writeForm" method="post" action="board?command=addList" onSubmit='return checkValid()'>
+
+	<input type="hidden" name="command" value="write">
+	
+	<table align="center" cellpadding="5" cellspacing="2" width="600" border="1">
+	
+	    <tr>
+	        <td width="1220" height="20" colspan="2" bgcolor="#336699">
+	            <p align="center"><font color="white" size="3"><b>방명록 작성</b></font></p>
+	        </td>
+	    </tr>
+	    
+	    <tr>
+	        <td width="150" height="20">
+	            <p align="right"><b><span style="font-size:9pt;">제 목</span></b></p>
+	        </td>
+	        <td width="450" height="20" ><b><span style="font-size:9pt;">
+			<input type=text name="title" id="title" size="50"></span></b></td>
+	    </tr>
+	    <tr>
+	        <td width="150" height="20">
+	            <p align="right"><b><span style="font-size:9pt;">내 용</span></b></p>
+	        </td>
+	        <td width="450" height="20">
+	        	<b><span style="font-size:9pt;">
+					<textarea name="content" id="content" cols="50" rows="10"></textarea>
+				</span></b>
+			</td>
+	    </tr>
+
+	    <tr>
+	        <td width="450" height="20" colspan="2" align="center">
+	        	<b><span style="font-size:9pt;">
+	        		<input type=submit value=글쓰기> 
+	        		<input type=reset value=다시쓰기>
+	        	</span></b>
+	        </td>
+	    </tr>
+	</table>
+
+</form>
+
+<hr>
+<div align=right><span style="font-size:9pt;">&lt;<a href="board?command=allList">리스트로 돌아가기</a>&gt;</span></div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</BODY>
+</HTML>
