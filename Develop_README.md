@@ -175,7 +175,7 @@ trot_master
 <details>
     <summary>Memaid 코드</summary>
 
-```mermaid
+```
 graph LR;
     A([🖥️ Client]) -->|Request| B[[🔀 Apache Tomcat]]
     B -->|Handles Request| C[[🟠 Servlet]]
@@ -222,7 +222,7 @@ graph LR;
 <details>
     <summary>Memaid 코드</summary>
 
-```mermaid
+```
 graph TD;
     A["사용자"] -->|"회원가입 / 로그인"| B["🏠 메인 화면 - 트로트 가수 선택"];
 
