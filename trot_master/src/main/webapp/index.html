@@ -91,10 +91,9 @@
                 `;
             }
         }
-        
+    
         function openSingerProfile(singerId) {
-            let popup = window.open("Singer.html?id=" + singerId, "SingerProfile", "width=800,height=600,scrollbars=yes");
-            if (popup) popup.focus();
+            let popup = window.open("/trot_master/SingerController?id=" + singerId, "SingerProfile", "width=800,height=600,scrollbars=yes");
         }
 
         function handleLogout() {
