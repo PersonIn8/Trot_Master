@@ -149,12 +149,225 @@
 ## 🏗 시스템 구조도  
 ![alt text](/readme_image/System.png)
 
+<details>
+    <summary>Memaid 코드</summary>
+
+```mermaid
+graph LR;
+    A([🖥️ Client]) -->|Request| B[[🔀 Apache Tomcat]]
+    B -->|Handles Request| C[[🟠 Servlet]]
+    C -->|Processes Data| D{{📌 Controller}}
+    D -->|Calls| E[[📂 Service Layer]]
+    E -->|Uses| F[📜 DTO]
+    E -->|Uses| G[⚙️ Util]
+    E -->|Interacts| H[[📂 DAO]]
+    H -->|Fetches Data| I[(🗄️ Oracle Database)]
+
+    subgraph Frontend
+        A
+    end
+
+    subgraph Backend
+        B
+        C
+        D
+        E
+        F
+        G
+        H
+    end
+
+    subgraph Database
+        I
+    end
+
+    style A fill:#2E8B57,stroke:#000,stroke-width:2px,color:#FFFFFF;
+    style B fill:#1E90FF,stroke:#000,stroke-width:2px,color:#FFFFFF;
+    style C fill:#FFA500,stroke:#000,stroke-width:2px,color:#000000;
+    style D fill:#FFD700,stroke:#000,stroke-width:2px,color:#000000;
+    style E fill:#DC143C,stroke:#000,stroke-width:2px,color:#FFFFFF;
+    style F fill:#8A2BE2,stroke:#000,stroke-width:2px,color:#FFFFFF;
+    style G fill:#654321,stroke:#000,stroke-width:2px,color:#FFFFFF;
+    style H fill:#4169E1,stroke:#000,stroke-width:2px,color:#FFFFFF;
+    style I fill:#8B4513,stroke:#000,stroke-width:2px,color:#FFFFFF;
+```
+</details>
+
 ## 🛰️ 서비스 흐름도  
 ![alt text](/readme_image/Service.png)  
 
+<details>
+    <summary>Memaid 코드</summary>
+
+```mermaid
+graph TD;
+    A["사용자"] -->|"회원가입 / 로그인"| B["🏠 메인 화면 - 트로트 가수 선택"];
+
+    %% 🎤 팬 활동
+    subgraph C["🎤 팬 활동"]
+        C1["🎭 팬 커뮤니티"] -->|"게시글 작성"| C2["📝 게시판"];
+    end
+    
+    %% 🛍️ 거래 시스템
+    subgraph D["🛍️ 거래 시스템"]
+        D1["🎁 굿즈 마켓"] -->|"상품 등록 / 거래"| D2["💳 거래 시스템"];
+    end
+
+    %% 💖 후원 시스템
+    subgraph E["💖 후원 시스템"]
+        E1["🌟 후원 프로젝트"] -->|"포인트 결제"| E2["💰 결제 시스템"];
+    end
+    
+    %% 🎫 공연 & 이벤트
+    subgraph F["🎫 공연 & 이벤트"]
+        F1["🎵 공연 일정 & 예매"] -->|"티켓 예매"| F2["🎟️ 예매 시스템"];
+    end
+    
+    %% 메인 화면에서 각 시스템으로 연결 (서브그래프 전체에 연결)
+    B --> C;
+    B --> D;
+    B --> E;
+    B --> F;
+
+    %% 💡 스타일 적용 (전체 테두리 색상을 파란색으로 변경)
+    style A fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style B fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style C fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style D fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style E fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style F fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style C1 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style C2 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style D1 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style D2 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style E1 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style E2 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style F1 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+    style F2 fill:#ffffff,stroke:#1E90FF,stroke-width:2px;
+
+    %% 💡 화살표 스타일 조정 (글자를 가리지 않도록 곡선 적용)
+    linkStyle 0,1,2,3 stroke:#1E90FF,stroke-width:2px,curve:basis;
+```
+</details>
 
 ## 🛢 스키마  
 
+**Oracle DB**를 활용하여 **가수, 팬, 게시글, 굿즈 거래 데이터**를 저장하고 관리합니다.  
+
+- **User**: 사용자 정보 관리  
+- **Singer**: 가수 프로필 및 활동 정보  
+- **Point**: 팬 활동 포인트 시스템  
+- **Post**: 팬 커뮤니티 게시글  
+- **Comment**: 게시글 댓글  
+- **Calendar**: 가수 일정 및 이벤트  
+- **Goods**: 트로트 굿즈 및 거래 정보 
+
+<details>
+    <summary> 🚟 Table 구조</summary>
+
+### 1. **User (사용자 정보)**
+
+| 컬럼명 | 데이터 타입 | 설명 |
+| --- | --- | --- |
+| user_id | INT | 사용자 고유 ID (Primary Key) |
+| username | VARCHAR(100) | 사용자 이름 |
+| email | VARCHAR(100) | 이메일 |
+| password | VARCHAR(255) | 비밀번호 |
+| phone | VARCHAR(15) | 전화번호 |
+| created_at | TIMESTAMP | 계정 생성 일시 |
+| updated_at | TIMESTAMP | 계정 정보 마지막 수정 일시 |
+
+![alt text](/readme_image/USERS.png)  
+
+### 2. **Singer (가수 정보)**
+
+| 컬럼명 | 데이터 타입 | 설명 |
+| --- | --- | --- |
+| singer_id | INT | 가수 고유 ID (Primary Key) |
+| name | VARCHAR(100) | 가수 이름 |
+| debut_date | DATE | 데뷔 일자 |
+| social_media | TEXT | SNS 링크 등 (JSON 형태로 저장 가능) |
+| created_at | TIMESTAMP | 정보 등록 일시 |
+| updated_at | TIMESTAMP | 정보 수정 일시 |
+| total_point | INT | 가수 총합 활동 포인트 |
+| birth_date | DATE | 생년월일 |
+| image_url | VARCHAR(500) | 가수 프로필 이미지 URL |
+
+![alt text](/readme_image/SINGER.png)  
+
+### 2-1. Point - 활동 포인트 테이블
+
+| 컬럼명 | 데이터 타입 | 설명 |
+| --- | --- | --- |
+| activity_id | INT | 활동 고유 ID (Primary Key) |
+| user_id | INT | 사용자 고유 ID  |
+| singer_id | INT | 가수 고유 ID  |
+| point | INT | 활동 포인트  |
+| created_at | TIMESTAMP | 정보 등록 일시 |
+
+![alt text](/readme_image/POINT.png)
+
+### 3. **Post (게시판 - 팬클럽 & 콘서트)**
+
+| 컬럼명 | 데이터 타입 | 설명 |
+| --- | --- | --- |
+| post_id | INT | 게시글 고유 ID (Primary Key) |
+| singer_id | INT | 가수 ID (Foreign Key) |
+| user_id | INT | 사용자 ID (Foreign Key)  |
+| title | VARCHAR(200) | 게시글 제목 |
+| content | TEXT | 게시글 내용 |
+| created_at | TIMESTAMP | 게시글 작성 일시 |
+| updated_at | TIMESTAMP | 게시글 수정 일시 |
+
+![alt text](/readme_image/POST.png)
+
+### 4. **Comment (게시판 댓글)**
+
+| 컬럼명 | 데이터 타입 | 설명 |
+| --- | --- | --- |
+| comment_id | INT | 댓글 고유 ID (Primary Key) |
+| post_id | INT | 게시글 ID (Foreign Key) |
+| user_id | INT | 댓글 작성자 ID (Foreign Key) |
+| content | TEXT | 댓글 내용 |
+| created_at | TIMESTAMP | 댓글 작성 일시 |
+| updated_at | TIMESTAMP | 댓글 수정 일시 |
+
+![alt text](/readme_image/COMMENTS.png)
+
+### 5. **Calendar (가수 일정 정보)**
+
+| 컬럼명 | 데이터 타입 | 설명 |
+| --- | --- | --- |
+| schedule_id | INT | 일정 고유 ID (Primary Key) |
+| singer_id | INT | 가수 ID (Foreign Key) |
+| event_title | VARCHAR(200) | 일정 제목 |
+| event_date | DATE | 일정 날짜 |
+| event_time | TIME | 일정 시간 |
+| event_type | VARCHAR(100) | 일정 유형 (팬미팅, 콘서트 등) |
+| location | VARCHAR(255) | 일정 장소 |
+| created_at | TIMESTAMP | 일정 등록 일시 |
+| updated_at | TIMESTAMP | 일정 수정 일시 |
+
+![alt text](/readme_image/CALENDAR.png)
+
+### 6. **Goods (굿즈 정보)**
+
+| 컬럼명 | 데이터 타입 | 설명 |
+| --- | --- | --- |
+| goods_id | INT | 굿즈 고유 ID (Primary Key) |
+| singer_id | INT | 가수 ID (Foreign Key) |
+| name | VARCHAR(100) | 굿즈 이름 |
+| description | TEXT | 굿즈 설명 |
+| price | DECIMAL(10, 2) | 가격 |
+| stock_qty | INT | 재고 수량 |
+| goods_type | VARCHAR(3) | 공식/비공식 타입 |
+| created_at | TIMESTAMP | 굿즈 등록 일시 |
+| updated_at | TIMESTAMP | 굿즈 수정 일시 |
+
+![alt text](/readme_image/GOODS.png)
+
+
+</details>
 
 ## ⚠ 트러블 슈팅  
 
