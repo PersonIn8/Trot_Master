@@ -110,7 +110,64 @@
 
 ## 📚 프로젝트 디렉토리 구조  
 
-(디렉토리 구조 설명 추가)  
+```
+trot_master
+│── src
+│   ├── main
+│   │   ├── java
+│   │   │   ├── controller
+│   │   │   │   ├── LoginController.java
+│   │   │   │   ├── LogoutController.java
+│   │   │   │   ├── OrderController.java
+│   │   │   │   ├── PointController.java
+│   │   │   │   ├── PostController.java
+│   │   │   │   ├── RegisterController.java
+│   │   │   │   ├── SingerController.java
+│   │   │   │
+│   │   │   ├── model
+│   │   │   │   ├── CalenderDAO.java
+│   │   │   │   ├── CommentDAO.java
+│   │   │   │   ├── GoodsDAO.java
+│   │   │   │   ├── PointDAO.java
+│   │   │   │   ├── PostDAO.java
+│   │   │   │   ├── SingerDAO.java
+│   │   │   │   ├── UserDAO.java
+│   │   │   │
+│   │   │   ├── model.domain
+│   │   │   │   ├── CalenderDTO.java
+│   │   │   │   ├── CommentDTO.java
+│   │   │   │   ├── GoodsDTO.java
+│   │   │   │   ├── PointDTO.java
+│   │   │   │   ├── PostDTO.java
+│   │   │   │   ├── SingerDTO.java
+│   │   │   │   ├── UserDTO.java
+│   │   │   │
+│   │   │   ├── util
+│   │   │   │   ├── DBUtil.java
+│   │
+│   │   ├── webapp
+│   │   │   ├── assets
+│   │   │   ├── images
+│   │   │   ├── META-INF
+│   │   │   ├── error.jsp
+│   │   │   ├── goods_form.html
+│   │   │   ├── index.html
+│   │   │   ├── list.jsp
+│   │   │   ├── login.jsp
+│   │   │   ├── main.html
+│   │   │   ├── read.jsp
+│   │   │   ├── register_fail.jsp
+│   │   │   ├── register_success.jsp
+│   │   │   ├── register.jsp
+│   │   │   ├── Singer.jsp
+│   │   │   ├── UpcomingSchedules.jsp
+│   │   │   ├── write.html
+│   │   │   ├── 굿즈.html
+│   │   │   ├── 콘서트.html
+│
+│── Deployment Descriptor: trot_master
+│── Java Resources
+```
 
 ## 🏗 시스템 구조도  
 ![alt text](/readme_image/System.png)
