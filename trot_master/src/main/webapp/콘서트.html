@@ -25,16 +25,91 @@ body, h1, h2, h3, h4, h5, h6 {
     position: fixed;
     z-index: 1000;
 }
+
+.w3-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer .icons {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer .icons li {
+    margin: 0 10px;
+}
+
+footer .icons a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
 </style>
+<script>
+    function openPopup(url) {
+        let width = 500, height = 600;
+        if (url.includes("login.jsp")) {
+            width = 400; height = 350;
+        } else if (url.includes("register.jsp")) {
+            width = 420; height = 480;
+        }
+        let popup = window.open(url, "popupWindow", `width=${width},height=${height},scrollbars=yes`);
+        if (popup) popup.focus();
+    }
+
+    function updateNavBar() {
+        var navBar = document.getElementById("authButtons");
+        var username = localStorage.getItem("username");
+
+        if (localStorage.getItem("user")) {
+            navBar.innerHTML = `
+                <div class="nav-right">
+                    <span class="username-display">${username}</span>
+                    <button class="w3-bar-item w3-button nav-btn" onclick="handleLogout()">로그아웃</button>
+                </div>
+            `;
+        } else {
+            navBar.innerHTML = `
+                <button class="w3-bar-item w3-button nav-btn" onclick="openPopup('register.jsp')">회원가입</button>
+                <button class="w3-bar-item w3-button nav-btn" onclick="openPopup('login.jsp')">로그인</button>
+            `;
+        }
+    }
+    
+    function handleLogout() {
+        localStorage.removeItem("user");
+        localStorage.removeItem("username");
+        updateNavBar();
+    }
+
+    window.onload = function() {
+        updateNavBar();
+    };
+</script>
 </head>
 <body class="w3-light-grey w3-content">
 
 <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="#concerts" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONCERTS</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="굿즈.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">굿즈</a>
+        <a href="콘서트.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">콘서트</a>
+        <a href="board?command=allList" class="w3-bar-item w3-button w3-padding-large w3-hide-small">커뮤니티</a>
+        <div class="w3-right" id="authButtons"></div>
     </div>
 </div>
 
@@ -43,23 +118,23 @@ body, h1, h2, h3, h4, h5, h6 {
     <h2 class="w3-center">콘서트 정보</h2>
     <div class="w3-row-padding w3-center" style="margin-top: 50px;">
         <div class="w3-third w3-container w3-margin-bottom">
-            <img src="assets/images/concert1.jpg" alt="콘서트 1" style="width:100%" class="w3-hover-opacity">
+            <img src="images/송가인콘1.jpg" alt="콘서트 1" class="w3-hover-opacity">
             <div class="w3-container w3-white">
                 <p><b>가수 A 월드 투어</b></p>
-                <p>일정: 2025년 5월 10일</p>
-                <p>장소: 서울 올림픽 경기장</p>
+                <p>일정: 2024년 3월 16일</p>
+                <p>장소: 서울 장충체육관 </p>
             </div>
         </div>
         <div class="w3-third w3-container w3-margin-bottom">
-            <img src="assets/images/concert2.jpg" alt="콘서트 2" style="width:100%" class="w3-hover-opacity">
+            <img src="images/송가인콘2.jpg" alt="콘서트 2" class="w3-hover-opacity">
             <div class="w3-container w3-white">
                 <p><b>밴드 B 라이브</b></p>
-                <p>일정: 2025년 6월 15일</p>
-                <p>장소: 부산 벡스코</p>
+                <p>일정: 2022년 6월 11일</p>
+                <p>장소: 한국소리의문화의전당</p>
             </div>
         </div>
         <div class="w3-third w3-container w3-margin-bottom">
-            <img src="assets/images/concert3.jpg" alt="콘서트 3" style="width:100%" class="w3-hover-opacity">
+            <img src="images/송가인콘3.jpg" alt="콘서트 3" class="w3-hover-opacity">
             <div class="w3-container w3-white">
                 <p><b>솔로 가수 C 팬미팅</b></p>
                 <p>일정: 2025년 7월 20일</p>

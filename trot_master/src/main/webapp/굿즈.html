@@ -13,6 +13,24 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4500;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    
+    }
+	.floating-button:hover {
+	    background-color: #e63e00;
+	}
 </style>
 </head>
 <body>
@@ -25,13 +43,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 				class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
 				href="javascript:void(0)" onclick="myFunction()"
 				title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a
-				href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a> <a
-				href="#band"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
-			<a href="#tour"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
-			<a href="#contact"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+				href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a> <a
+				href="Singer.jsp"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">굿즈</a>
+			<a href="콘서트.html"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">콘서트</a>
+			<a href="list.jsp"
+				class="w3-bar-item w3-button w3-padding-large w3-hide-small">커뮤니티</a>
 			<a href="javascript:void(0)"
 				class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
 				class="fa fa-search"></i></a>
@@ -41,12 +59,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 	<div id="navDemo"
 		class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
 		style="margin-top: 46px">
-		<a href="#band" class="w3-bar-item w3-button w3-padding-large"
-			onclick="myFunction()">BAND</a> <a href="#tour"
-			class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-		<a href="#contact" class="w3-bar-item w3-button w3-padding-large"
-			onclick="myFunction()">CONTACT</a> <a href="#"
-			class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+		<a href="index.html" class="w3-bar-item w3-button w3-padding-large"
+			onclick="myFunction()">HOME</a> <a href=굿즈.html"
+			class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">굿즈</a>
+		<a href="콘서트.html" class="w3-bar-item w3-button w3-padding-large"
+			onclick="myFunction()">콘서트</a> <a href="list.jsp"
+			class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">커뮤니티</a>
 	</div>
 
 <!-- 굿즈 제작 의뢰 탭 -->
@@ -56,22 +74,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <h2 class="w3-center">비공식 굿즈 제작 의뢰</h2>
   <div class="w3-row-padding w3-padding-16 w3-center" id="custom-goods">
     <div class="w3-quarter">
-      <img src="custom_tshirt.png" alt="커스텀 티셔츠" style="width:100%">
+      <img src="images/커스텀 티셔츠.jpg" alt="커스텀 티셔츠" style="width:100%">
       <h3>커스텀 티셔츠</h3>
       <p>나만의 디자인을 적용한 티셔츠 제작 가능</p>
     </div>
     <div class="w3-quarter">
-      <img src="custom_keychain.png" alt="커스텀 키링" style="width:100%">
+      <img src="images/커스텀 키링.jpg" alt="커스텀 키링" style="width:100%">
       <h3>커스텀 키링</h3>
       <p>원하는 일러스트나 로고를 추가하여 제작</p>
     </div>
     <div class="w3-quarter">
-      <img src="custom_poster.png" alt="커스텀 포스터" style="width:100%">
+      <img src="images/커스텀 포스터.jpg" alt="커스텀 포스터" style="width:100%">
       <h3>커스텀 포스터</h3>
       <p>애니, 영화, 게임 테마의 포스터 제작 가능</p>
     </div>
     <div class="w3-quarter">
-      <img src="custom_notebook.png" alt="커스텀 노트" style="width:100%">
+      <img src="images/커스텀 노트.webp" alt="커스텀 노트" style="width:100%">
       <h3>커스텀 노트</h3>
       <p>디자인을 추가하여 나만의 노트 제작</p>
     </div>
@@ -81,22 +99,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <h2 class="w3-center">공식 굿즈 정보</h2>
   <div class="w3-row-padding w3-padding-16 w3-center" id="official-goods">
     <div class="w3-quarter">
-      <img src="official_mug.png" alt="공식 머그컵" style="width:100%">
+      <img src="images/공식 머그컵.jpg" alt="공식 머그컵" style="width:100%">
       <h3>공식 머그컵</h3>
       <p>공식 라이선스를 받은 고품질 머그컵</p>
     </div>
     <div class="w3-quarter">
-      <img src="official_figures.png" alt="공식 피규어" style="width:100%">
+      <img src="images/공식 피규어.jpg" alt="공식 피규어" style="width:100%">
       <h3>공식 피규어</h3>
       <p>정식 라이선스 인증된 피규어</p>
     </div>
     <div class="w3-quarter">
-      <img src="official_poster.png" alt="공식 포스터" style="width:100%">
+      <img src="images/공식 포스터.jpg" alt="공식 포스터" style="width:100%">
       <h3>공식 포스터</h3>
       <p>오리지널 아트워크가 포함된 공식 포스터</p>
     </div>
     <div class="w3-quarter">
-      <img src="official_tshirt.png" alt="공식 티셔츠" style="width:100%">
+      <img src="images/공식 티셔츠.jpg" alt="공식 티셔츠" style="width:100%">
       <h3>공식 티셔츠</h3>
       <p>인증된 공식 티셔츠</p>
     </div>
@@ -111,6 +129,19 @@ function w3_open() {
  
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
+}
+
+function openPopup() {
+    var popupWidth = 600; // 팝업 창 너비
+    var popupHeight = 700; // 팝업 창 높이
+    var left = (window.innerWidth - popupWidth) / 2; // 화면 중앙 정렬
+    var top = (window.innerHeight - popupHeight) / 2; // 화면 중앙 정렬
+
+    window.open(
+        "goods_form.html", // 팝업으로 열릴 페이지
+        "GoodsFormPopup", // 팝업 창 이름
+        "width=" + popupWidth + ",height=" + popupHeight + ",top=" + top + ",left=" + left + ",scrollbars=yes,resizable=yes"
+    );
 }
 </script>
 
@@ -130,6 +161,7 @@ function w3_close() {
           class="label">Email</span></a></li>
     </ul>
   </div>
+<button class="floating-button" onclick="openPopup()">굿즈 제작 의뢰</button>
 </footer>
 
 
